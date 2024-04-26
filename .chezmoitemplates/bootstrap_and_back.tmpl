@@ -1,0 +1,18 @@
+{{ if eq . "windows" -}}
+
+powershell -File .\install.ps1
+call .\install
+call .\bootstrap
+call .\bootstrap-vcpkg
+
+cd %USERPROFILE%/source
+
+{{ else if eq . "linux" -}}
+
+./install.sh
+./bootstrap.sh
+./bootstrap-vcpkg.sh
+
+cd ~/source
+
+{{ end -}}

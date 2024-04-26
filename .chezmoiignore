@@ -1,0 +1,6 @@
+.config/chezmoi/**
+
+{{- if ne .chezmoi.os "windows" -}}
+AppData/
+AppData/**
+{{ end -}}

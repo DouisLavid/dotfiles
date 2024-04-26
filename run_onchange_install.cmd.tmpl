@@ -1,0 +1,45 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+{{ range .installs.windows.winget -}}
+call winget install {{ . | quote }}
+{{ end -}}
+
+cd %USERPROFILE%
+
+{{ else if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+cd ~
+
+{{ end -}}
+
+
+
+mkdir source
+cd source
+
+{{ range .installs.all.git -}}
+git clone {{ printf "%s %s" .url .args }}
+cd {{ .name | quote }}
+
+{{ template "bootstrap_and_back.tmpl" $.chezmoi.os }}
+
+{{ end -}}
+
+cd vcpkg
+
+{{ if eq .chezmoi.os "windows" -}}
+set PATH=%PATH%;%CD%
+vcpkg integrate install
+
+{{ else if eq .chezmoi.os "linux" -}}
+export PATH=$PATH:$PWD
+
+
+{{ end -}}
+
+{{ range .installs.all.vcpkg -}}
+
+vcpkg install {{ . | quote }}
+
+{{ end -}}
