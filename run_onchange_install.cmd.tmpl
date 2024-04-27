@@ -18,7 +18,7 @@ sudo add-apt-repository {{ . | quote }}
 sudo apt update
 
 {{ range .installs.linux.apt -}}
-sudo apt install {{ . | quote }}
+sudo apt install {{ . | quote }} -y
 {{ end -}}
 
 sudo apt full-upgrade
