@@ -91,3 +91,4 @@ installs:
       - tar
       - libpcre2-dev
       - gettext
+      - pkg-config
