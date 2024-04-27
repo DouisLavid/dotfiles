@@ -69,6 +69,7 @@ installs:
       - "ppa:fish-shell/release-3"
     apt:
       - fail2ban
+      - ufw
       - wget
       - curl
       - git
