@@ -86,6 +86,8 @@ installs:
       - build-essential
       - cmake
       - bat
+      - zip
       - unzip
+      - tar
       - libpcre2-dev
       - gettext
