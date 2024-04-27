@@ -23,6 +23,10 @@ sudo apt install {{ . | quote }} -y
 
 sudo apt full-upgrade
 
+chsh -s $(which fish)
+curl -sS https://starship.rs/install.sh | sh
+
+
 {{ end -}}
 
 
