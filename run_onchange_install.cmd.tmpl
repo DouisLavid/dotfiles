@@ -5,11 +5,23 @@ call winget install {{ . | quote }}
 {{ end -}}
 
 cd %USERPROFILE%
-
+wsl --install --no-launch
 {{ else if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
 cd ~
+
+{{ range .installs.linux.ppa -}}
+sudo add-apt-repository {{ . | quote }}
+{{ end -}}
+
+sudo apt update
+
+{{ range .installs.linux.apt -}}
+sudo apt install {{ . | quote }}
+{{ end -}}
+
+sudo apt full-upgrade
 
 {{ end -}}
 

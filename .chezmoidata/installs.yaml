@@ -64,3 +64,26 @@ installs:
       - "Microsoft.VisualStudioCode"
       - "Nextcloud.NextcloudDesktop"
       - "RiotGames.Valorant.EU"
+  linux:
+    ppa:
+      - "ppa:fish-shell/release-3"
+    apt:
+      - fail2ban
+      - wget
+      - curl
+      - git
+      - fish
+      - neovim
+      - tmux
+      - htop
+      - tree
+      - xclip
+      - xsel
+      - xdotool
+      - x11-utils
+      - x11-xserver-utils
+      - x11-xkb-utils
+      - build-essential
+      - cmake
+      - bat
+      - unzip
