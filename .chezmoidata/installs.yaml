@@ -86,6 +86,9 @@ installs:
       - x11-xkb-utils
       - build-essential
       - cmake
+      - autoconf
+      - automake
+      - autoconf-archive
       - bat
       - zip
       - unzip
