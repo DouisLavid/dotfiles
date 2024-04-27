@@ -87,3 +87,5 @@ installs:
       - cmake
       - bat
       - unzip
+      - libpcre2-dev
+      - gettext
