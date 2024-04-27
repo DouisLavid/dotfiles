@@ -92,3 +92,4 @@ installs:
       - libpcre2-dev
       - gettext
       - pkg-config
+      - linux-libc-dev
