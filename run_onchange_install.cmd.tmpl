@@ -34,7 +34,7 @@ sudo apt full-upgrade
 chsh -s $(which fish)
 curl -sS https://starship.rs/install.sh | sh
 
-echo "starship init fish | source" >> ~/.config/fish/config.fish
+grep -qxF 'starship init fish | source' foo.bar || echo 'starship init fish | source' >> foo.bar
 
 {{ end -}}
 
